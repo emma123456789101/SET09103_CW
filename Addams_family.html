@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> WitchStarNet Quizzes- addams family</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script>
+ var xhr = new XMLHttpRequest();
+ xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      var questions = JSON.parse(xhr.responseText);
+      var html = '';
+      for (var i = 0; i < questions.length; i++) {
+        html += '<p class="question">' + questions[i].question + '</p>';
+        for (var option in questions[i].options) {
+          html += '<input type="radio" id="question' + i + '" name="question' + i + '" value="' + option + '">' + option + ') ' + questions[i].options[option] + '<br>';
+        }
+      }
+      document.getElementById('quiz').innerHTML = html;
+    }
+ };
+ xhr.open('GET', 'new 1.json', true);
+ xhr.send();
+
+ function checkAnswers(event) {
+	event.preventDefault(); // Prevent the form from submitting to the server
+    var questions = JSON.parse(xhr.responseText);
+    var correctCount = 0;
+    for (var i = 0; i < questions.length; i++) {
+      var answer = document.getElementById('question' + i).value;
+      if (answer === questions[i].answer) {
+        correctCount++;
+      }
+    }
+    alert('You got ' + correctCount + ' questions correct!');
+ }
+</script>
+</head>
+<body background="https://i.pinimg.com/564x/f6/81/0a/f6810a487d373c387432026b7171a330.jpg">
+
+
+
+<nav>
+<div class="w3-bar w3-black">
+  
+  <a href="file:///C:/Users/Emma%20Davidson/OneDrive%20-%20Edinburgh%20Napier%20University/Documents/advanced%20web%20tech/HALLOWEEN%20QUIZ%20APP.html"class="w3-bar-item w3-button">WitchStarNet home</a>
+  <a href="file:///C:/Users/Emma%20Davidson/OneDrive%20-%20Edinburgh%20Napier%20University/Documents/advanced%20web%20tech/Addams_family.html" class="w3-bar-item w3-button">Addams family</a>
+  <a href="file:///C:/Users/Emma%20Davidson/OneDrive%20-%20Edinburgh%20Napier%20University/Documents/advanced%20web%20tech/The_nightmare_before_christmas.html" class="w3-bar-item w3-button">The nightmare before christmas</a>
+  <a href="file:///C:/Users/Emma%20Davidson/OneDrive%20-%20Edinburgh%20Napier%20University/Documents/advanced%20web%20tech/beetle%20juice.html" class="w3-bar-item w3-button">Beetle juice</a>
+  <a href="file:///C:/Users/Emma%20Davidson/OneDrive%20-%20Edinburgh%20Napier%20University/Documents/advanced%20web%20tech/Halloween%20town.html" class="w3-bar-item w3-button">Halloween town</a>
+  <a href="file:///C:/Users/Emma%20Davidson/OneDrive%20-%20Edinburgh%20Napier%20University/Documents/advanced%20web%20tech/The%20corpse%20bride.html" class="w3-bar-item w3-button">The corpse bride</a>
+  <a href="file:///C:/Users/Emma%20Davidson/OneDrive%20-%20Edinburgh%20Napier%20University/Documents/advanced%20web%20tech/example%20for%20carosel.html" class="w3-bar-item w3-button"> Other quizes to try out</a>
+</div>
+</nav>
+  <form id="q1" onsubmit="return checkAnswers(event)">
+    <h2>Addams family (1991)</h2>
+	<div class="q1">
+	
+	
+	<div class="question">
+	<h3>Question 1:</h3>
+	<p> id="a1">
+    <p>Where was Fester lost in ? </p>
+    <input type="radio" name="q1" value="Bermuda Triangle"> Bermuda Triangle<br>
+    <input type="radio" name="q1" value="The north pole"> The north pole<br>
+    <input type="radio" name="q1" value="idian ocean"> idian ocean<br>
+	</div>
+	<div class="question">
+  <h2>Question 1:</h2>
+    <p>Where was Fester lost in ?</p>
+    <input type="radio" name="q1" value="Bermuda Triangle"> Bermuda Triangle<br>
+    <input type="radio" name="q1" value="The north pole"> The north pole<br>
+    <input type="radio" name="q1" value="idian ocean"> idian ocean<br>
+	</div>
+	<div class="question">
+    <h2>Question 2:</h2>
+    <p>What is the real first name of Dr. Pinder-Schloss's son whom Tully recruits into pretending to be Uncle Fester and swindle the Addamses?</p>
+    <input type="radio" name="q2" value="Christopher"> Christopher<br>
+    <input type="radio" name="q2" value="martin"> martin<br>
+    <input type="radio" name="q2" value="Gordon"> Gordon<br>
+   </div>
+   <div class="question">
+    <h2>Question 3:</h2>
+    <p>What game did the family play at the end of the movie, on Halloween?</p>
+    <input type="radio" name="q3" value="wake the dead"> wake the dead<br>
+    <input type="radio" name="q3" value="witches brooms"> witches brooms<br>
+    <input type="radio" name="q3" value="Murder trial"> Murder trial<br>
+    </div>
+	<div class="question">
+    <h2>Question 4:</h2>
+    <p>Where did Gomez and Morticia meet?</p>
+    <input type="radio" name="q4" value="at a wake"> at a wake<br>
+    <input type="radio" name="q4" value="at a grave"> at a grave<br>
+    <input type="radio" name="q4" value="at a crime scene"> at a crime scene<br>
+   </div>
+   <div class="question">
+    <h2>Question 5:</h2>
+    <p>What was Morticia's surprise for Gomez at the end of the movie?</p>
+    <input type="radio" name="q5" value="she got a job"> she got a job<br>
+    <input type="radio" name="q5" value="she's pregnant"> she's pregnant<br>
+    <input type="radio" name="q5" value="she's devorcing him"> she's devorcing him<br>
+    </div>
+	<div class="question">
+    <h2>Question 6:</h2>
+    <p>what does Gomez call Morticia</p>
+    <input type="radio" name="q6" value="cara mia"> cara mia<br>
+    <input type="radio" name="q6" value="Mon cher"> Mon cher<br>
+    <input type="radio" name="q6" value="Querida"> Querida<br>
+    </div>
+	<div class="question">
+    <h2>Question 7:</h2>
+    <p>What did the judge give Gomez (in the courthouse)?</p>
+    <input type="radio" name="q7" value="a golf ball"> a golf ball<br>
+    <input type="radio" name="q7" value="a finger trap"> a finger trap<br>
+    <input type="radio" name="q7" value="a fine"> a fine<br>
+    </div>
+	<div class="question">
+    <h2>Question 8:</h2>
+    <p>Who owed Mrs. Craven money?</p>
+    <input type="radio" name="q8" value="Fester"> Fester<br>
+    <input type="radio" name="q8" value="Gomez"> Gomez<br>
+    <input type="radio" name="q8" value="Tully"> Tully<br>
+    </div>
+	<div class="question">
+    <h2>Question 9:</h2>
+    <p>How long has the 'Mamushka' been an Addams tradition?</p>
+    <input type="radio" name="q9" value="30 years"> 30 years<br>
+    <input type="radio" name="q9" value="500 years"> 500 years<br>
+    <input type="radio" name="q9" value="since God knows when"> since God knows when<br>
+    </div>
+	<div class="question">
+    <h2>Question 10:</h2>
+    <p>What does Morticia tell Wednesday to do at the breakfast table right before Mrs. Craven walks in?</p>
+    <input type="radio" name="q10" value="torture her brother"> torture her brother<br>
+    <input type="radio" name="q10" value="drink the cyanide"> drink the cyanide<br>
+    <input type="radio" name="q10" value="play with her food"> play with her food <br>
+    </div>
+	</div>
+    <!-- Add more questions here -->
+    <button type="button" onclick="showNextQuestion()">Next</button>
+    <input type="submit" value="Submit">
+  </form>
+  <script>
+// Show the first question initially
+  var currentQuestionIndex = 0;
+ function showNextQuestion() {
+  var currentQuestion = document.querySelector('.question:nth-child(' + (currentQuestionIndex + 1) + ')');
+  currentQuestion.style.display = 'none';
+  currentQuestionIndex++;
+  var nextQuestion = document.querySelector('.question:nth-child(' + (currentQuestionIndex + 1) + ')');
+  nextQuestion.style.display = 'block';
+}
+   
+//counter for how many correct questions
+let correctAnswersCounter = 0;
+function incrementCounter() {
+    correctAnswersCounter++;
+}
+document.getElementById('q1-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    let selectedAnswer = document.querySelector('input[name="q1"]:checked');
+
+    if (selectedAnswer.value === "Bermuda Triangle") {
+        incrementCounter();
+        alert("You are correct!");
+    } else {
+        alert("Sorry, the correct answer is: " + correctOption);
+    }
+});
+  
+</script>
+ <style>
+body {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+h2{
+ color:
+#D5B7E8;
+}
+
+h3{
+ color:
+#D5B7E8;
+}
+.q1{
+color:
+#D5B7E8;
+}
+.question {
+  display: none;
+  /* Add other styles as needed */
+}
+</style>
+  </body>
+  </html>
